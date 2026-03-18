@@ -41,7 +41,10 @@ class Tile:
     @staticmethod
     def save_tiles(filename: str, placed_tiles: list[Tile]) -> None:
         with open(filename, "w") as f:
-            f.write(json.dumps(placed_tiles, cls=TileEncoder))
+            f.write(
+                json.dumps(placed_tiles,
+                           cls=TileEncoder,
+                           separators=(",", ":")))
 
     @staticmethod
     def load_tiles(filename: str) -> list[Tile]:
