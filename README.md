@@ -24,11 +24,12 @@ A simple command line based sketching app written in python using curses.
 |New Sketch|`N`|Clears all tiles|
 |Line|`l`|Draws a line to the cursor from the last placed tile|
 |Quick Save|`]`|Quickly saves the sketch to `./sketch.json`|
+|Save|`}`|Saves the sketch to the specified file|
 |Quick Load|`[`|Quickly loads the sketch from `./sketch.json`|
+|Load|`{`|Loads the sketch from the specified file|
 |Quit|`Q`|Quits the application|
 |Quick Save & Quit|`X`|Saves to `./sketch.json` and then quits|
 
 ## TODO
-- Load and save to a specific file.
 - Rebinding
 - Custom commands

@@ -29,7 +29,7 @@ def run(stdscr: curses.window) -> None:
             cmd = commands.registry.get(ord(c))
             if cmd:
                 cmd(sketcher)
-    sketcher.render()
+    sketcher.render(True)
     while handle_command(stdscr, sketcher):
         pass
 
@@ -39,7 +39,7 @@ def handle_command(stdscr: curses.window, sketcher: Sketcher) -> bool:
     cmd = commands.registry.get(stdscr.getch())
     if cmd and cmd(sketcher) is False:
         return False
-    sketcher.render()
+    sketcher.render(True)
     return True
 
 

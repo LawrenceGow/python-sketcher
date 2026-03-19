@@ -35,9 +35,9 @@ class Sketcher(Canvas):
                 if not shift:
                     break
 
-    def render(self) -> None:
+    def render(self, render_mode: bool) -> None:
         """Renders to the canvas"""
-        super().render()
+        super().render(render_mode)
         if not self._player.hidden:
             self._draw_entity(self._player)
         self._stdscr.refresh()
