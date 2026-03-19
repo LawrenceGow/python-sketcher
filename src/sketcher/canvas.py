@@ -5,6 +5,7 @@ Module for the canvas class.
 import curses
 import math
 from contextlib import suppress
+from pathlib import Path
 
 from sketcher.entities.tile import DEFAULT_TILE_GLYPH
 
@@ -88,6 +89,7 @@ class Canvas:
             filename = self._get_filename("SAVE FILE", True)
         if not filename:
             return
+        filename = str(Path(filename).expanduser().resolve())
         tiles_to_save: list[Tile] = [
             t for row in self._tile_grid for t in row if t
         ]
@@ -99,6 +101,7 @@ class Canvas:
             filename = self._get_filename("LOAD FILE", True)
         if not filename:
             return
+        filename = str(Path(filename).expanduser().resolve())
         with suppress(FileNotFoundError):
             loaded_tiles: list[Tile] = Tile.load_tiles(filename)
             for t in loaded_tiles:

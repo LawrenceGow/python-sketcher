@@ -8,7 +8,7 @@ from .command_keys import (CMD_LOAD, CMD_QLOAD, CMD_QSAVE, CMD_SAVE,
                            CMD_SAVE_QUIT)
 from .command_registry import registry
 
-SKETCH_FILENAME = "/var/home/lgow/projects/sketcher/sketch.json"
+SKETCH_FILENAME = "~/quick_sketch.json"
 
 
 @registry.register(CMD_SAVE)
