@@ -17,7 +17,6 @@ def run(stdscr: curses.window) -> None:
     for i in range(0, curses.COLORS):
         curses.init_pair(i + 1, i, -1)
     curses.curs_set(0)  # Hide the cursor
-    stdscr.keypad(True)
 
     # Setup the sketcher
     sketcher: Sketcher = Sketcher(stdscr)
